@@ -7,8 +7,8 @@ int main() {
     for(;;) {
         int number = $live(-1234);
         double real = $live(3.14159);
-        const char *string = $live("abc");
-        std::string string2 = $live("def");
+        const char *string = $live("hello world");
+        std::string string2 = $live("abcdef");
         std::cout << number << ',' << real << ',' << string << ',' << string2 << std::endl;
     }
 }
