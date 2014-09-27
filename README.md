@@ -5,7 +5,7 @@ live
 - Live is cross-platform. Builds on Windows/Linux/MacosX. Compiles on g++/clang/msvc.
 - Live is self-contained. No third party dependencies.
 - Live is tiny. Header only.
-- MIT licensed.
+- BOOST licensed.
 
 ### intro
 - On debug, `$live(...)` constants are watched, parsed, evaluated, cached, and returned back as needed.
