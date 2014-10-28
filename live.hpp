@@ -64,7 +64,7 @@ namespace {
 
             static std::map< const char * const, time_t > cache;
             if( cache.find( pathfile ) == cache.end() ) {
-                cache[ pathfile ] = modify ? curtime : std::time(0);
+                cache[ pathfile ] = curtime;
                 return true;
             }
 
@@ -155,7 +155,9 @@ namespace {
         static T &check( const char *const pathfile, int counter, const T &t ) {
             using pair = std::pair< const char *const, int >;
             static std::map< pair, T > cache;
-            T &item = cache[ pair(pathfile,counter) ];
+            static std::map< pair, unsigned > hits;
+            auto key = pair( pathfile, counter );
+            T &item = cache[ key ];
             if( has_changed( pathfile ) ) {
                 parse( pathfile );
                 auto &values = get( pathfile );
@@ -165,7 +167,8 @@ namespace {
                         cast( value, item );
                     }
                 }
-                if( counter + 1 == values.size() ) {
+                if( ++hits[ key ] >= values.size() ) {
+                    hits[ key ] = 0;
                     touch( pathfile );
                 }
             }
