@@ -1,4 +1,4 @@
-live
+live <a href="https://travis-ci.org/r-lyeh/live"><img src="https://api.travis-ci.org/r-lyeh/live.svg?branch=master" align="right" /></a>
 ====
 
 - Live is an automatic reloader of constants during runtime, featuring type inference. Written in C++11.
