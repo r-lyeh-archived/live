@@ -5,7 +5,7 @@ live <a href="https://travis-ci.org/r-lyeh/live"><img src="https://api.travis-ci
 - Live is cross-platform. Builds on Windows/Linux/MacosX. Compiles on g++/clang/msvc.
 - Live is self-contained. No third party dependencies.
 - Live is tiny. Header only.
-- BOOST licensed.
+- Live is zlib/libpng licensed.
 
 ### intro
 - On debug, `$live(...)` constants are watched, parsed, evaluated, cached, and returned back as needed.
